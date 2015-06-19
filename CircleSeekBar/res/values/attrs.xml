@@ -6,6 +6,7 @@
             <enum name="fill" value="1" />
             <enum name="fill_and_stroke" value="2" />
         </attr>
+        <attr name="capRound" format="boolean" />
         <attr name="showText" format="boolean" />
         <attr name="startAngle" format="float" />
         <attr name="textSize" format="dimension" />

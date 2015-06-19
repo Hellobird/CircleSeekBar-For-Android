@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Paint.Cap;
 import android.graphics.Paint.Style;
 import android.graphics.Rect;
 import android.graphics.RectF;
@@ -83,6 +84,7 @@ public class CircleSeekBar extends View {
 	private int mStartAlpha; // 开始透明度,0~255
 	private int mEndAlpha; // 结束透明度,0~255
 	private boolean mZoomEnable; // 二级进度缩放
+	private boolean mCapRound; // 进度条首尾是否圆角
 
 	private RectF mProgressRect;
 	private RectF mSProgressRect;
@@ -139,12 +141,13 @@ public class CircleSeekBar extends View {
 			mEndAlpha = type.getInt(R.styleable.CircleSeekBar_endAlpha, 255);
 			mZoomEnable = type.getBoolean(R.styleable.CircleSeekBar_zoomEnable,
 					false);
+			mCapRound = type.getBoolean(R.styleable.CircleSeekBar_capRound,
+					true);
 			float progress = type.getFloat(R.styleable.CircleSeekBar_progress,
 					0);
 			progress = progress > mMaxProgress || progress < 0f ? 0f : progress;
 			mTargetAngle = progress / mMaxProgress * 360f;
 			mCurrentAngle = mTargetAngle;
-
 			type.recycle();
 		} else {
 			mMode = MODE_DEFAULT;
@@ -162,6 +165,7 @@ public class CircleSeekBar extends View {
 			mStartAlpha = 255;
 			mEndAlpha = 255;
 			mZoomEnable = false;
+			mCapRound = true;
 		}
 		mPaint = new Paint();
 		mPaint.setAntiAlias(true);
@@ -174,6 +178,9 @@ public class CircleSeekBar extends View {
 		mSProgressPaint = new Paint(mProgressPaint);
 		mSProgressPaint.setColor(mSProgressColor);
 		mSProgressPaint.setStrokeWidth(mSProgressStrokeWidth);
+		if (mCapRound) {
+			mProgressPaint.setStrokeCap(Cap.ROUND);
+		}
 		if (mMode == MODE_FILL_AND_STROKE) {
 			mProgressPaint.setStyle(Style.FILL);
 			mSProgressPaint.setStyle(Style.FILL_AND_STROKE);
@@ -187,7 +194,6 @@ public class CircleSeekBar extends View {
 			mSProgressPaint.setStyle(Style.STROKE);
 			mUseCenter = false;
 		}
-
 		mProgressRect = new RectF();
 		mTextBounds = new Rect();
 		mFormat = new DecimalFormat(PROGRESS_FORMAT_DEFAULT);
@@ -253,7 +259,6 @@ public class CircleSeekBar extends View {
 		if (mZoomEnable) {
 			zoomSProgressRect(ratio);
 		}
-
 		// 绘制二级进度条
 		canvas.drawArc(mSProgressRect, 0, 360f, false, mSProgressPaint);
 		// 绘制进度条

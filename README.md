@@ -1,4 +1,4 @@
-# CircleSeekBar-For-Android
+﻿# CircleSeekBar-For-Android
 This  is my first project  on git, I hope you will get it and make your android application still more cool. Perhaps use your code make it perfect.
 
 ##引言
@@ -9,5 +9,8 @@ This  is my first project  on git, I hope you will get it and make your android 
 <div class='row'>
         <img src='https://github.com/Hellobird/CircleSeekBar-For-Android/blob/master/preview.gif' width="400px" style='border: #f1f1f1 solid 1px'/>
 </div>
-
+>下面是圆角进度的效果
+<div class='row'>
+        <img src='https://github.com/Hellobird/CircleSeekBar-For-Android/blob/master/preview2.png' width="400px" style='border: #f1f1f1 solid 1px'/>
+</div>
 
