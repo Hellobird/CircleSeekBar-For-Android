@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer-array name="color">
+        <item>0xffea9999</item>
+        <item>0xfff9cb9c</item>
+        <item>0xffb6d7a8</item>
+        <item>0xffb4a7d6</item>
+        <item>0xffa2c4c9</item>
+        
+    </integer-array>
+
+</resources>

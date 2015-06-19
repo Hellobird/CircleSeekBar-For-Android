@@ -1,0 +1,123 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:circleSeekBar="http://schemas.android.com/apk/res/com.example.circleseekbardemo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:padding="10dp" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/title"
+            android:textColor="#437d94"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal" >
+
+            <com.hellobird.circleseekbar.CircleSeekBar
+                android:id="@+id/progress1"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1" />
+
+            <com.hellobird.circleseekbar.CircleSeekBar
+                android:id="@+id/progress2"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                circleSeekBar:mode="stroke"
+                circleSeekBar:progressWidth="10dp"
+                circleSeekBar:sProgressWidth="15dp"
+                circleSeekBar:startAngle="-90"
+                circleSeekBar:textSize="15sp"
+                circleSeekBar:velocity="6" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <com.hellobird.circleseekbar.CircleSeekBar
+                android:id="@+id/progress3"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                circleSeekBar:mode="fill"
+                circleSeekBar:progressColor="#a61c00"
+                circleSeekBar:sProgressColor="#cf8c7f"
+                circleSeekBar:startAngle="90"
+                circleSeekBar:textColor="#ffffff"
+                circleSeekBar:textSize="20sp"
+                circleSeekBar:velocity="2" />
+
+            <com.hellobird.circleseekbar.CircleSeekBar
+                android:id="@+id/progress4"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                circleSeekBar:endAlpha="255"
+                circleSeekBar:fadeEnable="true"
+                circleSeekBar:mode="fill"
+                circleSeekBar:progressColor="#437d94"
+                circleSeekBar:sProgressColor="#ffffff"
+                circleSeekBar:showText="false"
+                circleSeekBar:startAlpha="80"
+                circleSeekBar:startAngle="180"
+                circleSeekBar:textColor="#000000"
+                circleSeekBar:textSize="20sp"
+                circleSeekBar:velocity="10" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <com.hellobird.circleseekbar.CircleSeekBar
+                android:id="@+id/progress5"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                circleSeekBar:mode="stroke"
+                circleSeekBar:showText="false"
+                circleSeekBar:startAngle="270"
+                circleSeekBar:velocity="5" />
+
+            <com.hellobird.circleseekbar.CircleSeekBar
+                android:id="@+id/progress6"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                circleSeekBar:mode="fill_and_stroke"
+                circleSeekBar:progressColor="#e69138"
+                circleSeekBar:progressWidth="10dp"
+                circleSeekBar:sProgressColor="#ffe599"
+                circleSeekBar:sProgressWidth="20dp"
+                circleSeekBar:textColor="#ffffff"
+                circleSeekBar:textSize="15sp"
+                circleSeekBar:velocity="9"
+                circleSeekBar:zoomEnable="true" />
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp" />
+    </LinearLayout>
+
+</ScrollView>
