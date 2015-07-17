@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:circleSeekBar="http://schemas.android.com/apk/res/com.example.circleseekbardemo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.hellobird.circleseekbar.CircleLoadBar
+        android:id="@+id/loadbar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        circleSeekBar:mode="stroke"
+        circleSeekBar:progressWidth="10dp"
+        circleSeekBar:sProgressWidth="15dp"
+        circleSeekBar:startAngle="-90"
+        circleSeekBar:textSize="15sp"
+        circleSeekBar:velocity="6" />
+
+</LinearLayout>
